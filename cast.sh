@@ -1,7 +1,19 @@
 #!/bin/bash
 
+# Found this on the ArchWiki++
+
+if [ -z $1 ]; then
+  echo "Give a twitch key, squidbrain!"
+  echo $0 twitch_astarast938th9th2t38th2th2
+  exit 1
+fi
+
 streaming() {
-INRES="1440x900" # input resolution
+
+#could also use
+#xrandr | grep '*' | awk '{print $1}'
+
+INRES="1920x1080" # input resolution
 FPS="15" # target FPS
 QUAL="fast"  # one of the many FFMPEG preset
 STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
