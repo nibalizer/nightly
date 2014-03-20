@@ -18,11 +18,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define  "puppetmaster" do |pm|
     pm.vm.box = "centos65"
     pm.vm.hostname = "puppetmaster"
+    pm.vm.network :private_network, ip: "192.168.0.2"
   end
 
   config.vm.define  "puppetclient" do |pm|
     pm.vm.box = "centos65"
     pm.vm.hostname = "puppetclient"
+    pm.vm.network :private_network, ip: "192.168.0.3"
   end
 
   # Create a forwarded port mapping which allows access to a specific port
